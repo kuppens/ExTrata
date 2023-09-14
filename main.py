@@ -64,3 +64,5 @@ elif len(files) == 2 and (type_val):
             file_name=f"{output_num}_tratado.xlsx",
             mime="application/vnd.ms-excel",
         )
+        if download:
+            st.cache_data.clear()
