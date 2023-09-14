@@ -1,6 +1,5 @@
 import streamlit as st
 from core import unzip, processa
-from xlsxwriter import Workbook
 import pandas as pd
 import time
 import io
@@ -66,3 +65,5 @@ elif len(files) == 2 and (type_val):
         )
         if download:
             st.cache_data.clear()
+            st.session_state["uploaded_files"] = False
+            files = 0

@@ -44,7 +44,5 @@ def processa(ref, txt):
         txt_delimiters[i + 1] - txt_delimiters[i]
         for i in range(len(txt_delimiters) - 1)
     ]
-
     df = pd.read_fwf(txt, widths=widths_with_last, names=column_names)
-    print(df)
     return df
