@@ -19,6 +19,19 @@ def extract_ref_info(ref_file_path):
 
     return txt_delimiters_with_last, column_names
 
+def extract_only_delimiters(ref_file):
+    with open(ref_file, "r") as f:
+        lines = f.readlines()
+
+    last_numbers = [int(line.split()[-1]) for line in lines]
+    txt_delimiters = [0]
+    for num in last_numbers:
+        txt_delimiters.append(txt_delimiters[-1] + num)
+
+    txt_delimiters_str = [str(x) for x in txt_delimiters]
+    txt_delimiters_joined = ",".join(txt_delimiters_str)
+    
+    return txt_delimiters_joined
 
 def unzip(files, ref_file_index, txt_file_index):
     ref_gz_path = files[ref_file_index]

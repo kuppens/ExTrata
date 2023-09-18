@@ -4,10 +4,10 @@ import pandas as pd
 import time
 import io
 
-st.set_page_config(page_title="ExTrata", page_icon="🪄", layout="wide")
-st.title("ExTrata")
+st.set_page_config(page_title="Gerar Planilha", page_icon="🪄", layout="wide")
+st.title("Gerar Planilha 🪄")
 st.subheader("Faça upload dos arquivos do Extrator, e baixe uma planilha formatada")
-st.write(
+st.info(
     "Atenção: faça upload dos arquivos REF e TXT, ambos no formato .gz original (zipados)"
 )
 
@@ -40,7 +40,7 @@ type_val = has_ref == True and has_txt == True
 
 if len(files) == 2 and type_val == False:
     st.write(
-        "Faça o Upload apenas dos arquivos originais do Extrator (formato REF.GZ e TXT.GZ)"
+        "Faça Upload apenas dos arquivos originais do Extrator (formato REF.GZ e TXT.GZ)"
     )
     time.sleep(5)
     st.session_state["file_uploader_key"] += 1
