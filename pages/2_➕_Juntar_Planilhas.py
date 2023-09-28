@@ -42,6 +42,14 @@ if files:
             file_name=f"planilhas_juntas.xlsx",
             mime="application/vnd.ms-excel",
         )
+        st.success(
+            '''
+            É bem provável que haverá várias linhas 'vazias' na planilha. Isso se dá pois alguma
+            das planilhas não foi filtrada pelo Extrator (o que é normal, algumas tabelas não tem jeito de filtrar).
+            Para filtrar apenas os resultados que deseja, selecione alguma coluna da planilha
+            principal (que provavelmente vai ser a de servidores-extrx) e filtre apenas valores não vazios!
+            '''
+        )
         if download:
             st.cache_data.clear()
             st.session_state["uploaded_files"] = False
