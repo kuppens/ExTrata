@@ -59,3 +59,18 @@ def processa(ref, txt):
     ]
     df = pd.read_fwf(txt, widths=widths_with_last, names=column_names)
     return df
+
+def join_multiple_excel_files(files):
+    # Initialize the result DataFrame with the first file
+    result_df = pd.read_excel(files[0], engine='openpyxl')
+    index_col = next(col for col in result_df.columns if 'MATRICULA' in col)
+    result_df.set_index(index_col, inplace=True)
+
+    # Iteratively join each subsequent file
+    for file in files[1:]:
+        df_to_join = pd.read_excel(file, engine='openpyxl')
+        index_col_join = next(col for col in df_to_join.columns if 'MATRICULA' in col)
+        df_to_join.set_index(index_col_join, inplace=True)
+        result_df = result_df.join(df_to_join, how='outer', rsuffix=f'_from_{file.name}')
+    
+    return result_df

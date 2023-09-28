@@ -8,7 +8,7 @@ url_macro = "https://cogep.notion.site/Utiliza-o-de-Macro-bb3fef3e3df448f1b04dc3
 url_dw_regional = "https://cogep.notion.site/Servidores-por-Regional-e-V-nculo-541acd6fc5094f428f9dc6bcc6ce692f"
 url_pasta_macros = "https://drive.google.com/drive/folders/1oqE-1eeT9a5gnOcJYPFScWg4DACRtxbs?usp=drive_link"
 
-st.markdown("# Manuais e Arquivos🧠")
+st.markdown("# Manuais e Arquivos 🧠")
 st.write("Aproveite, jovem padawan...")
 
 st.markdown(
