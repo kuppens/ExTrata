@@ -1,4 +1,5 @@
 from core import join_multiple_excel_files
+import pandas as pd
 import streamlit as st
 import io
 
