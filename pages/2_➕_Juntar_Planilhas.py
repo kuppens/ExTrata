@@ -1,10 +1,7 @@
-from core import join_multiple_excel_files
 import pandas as pd
 import streamlit as st
 import io
-import pip
-
-pip.main(["install", "openpyxl"])
+from core import join_multiple_excel_files
 
 st.set_page_config(page_title="Juntar Planilhas", page_icon="➕", layout="wide")
 st.title("Juntar Planilhas ➕")
