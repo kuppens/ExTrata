@@ -1,12 +1,11 @@
 import streamlit as st
 
-
-st.set_page_config(page_title="Manuais e Arquivos", page_icon="🧠", layout="wide")
-
-## Declare
+## LINKS
 url_macro = "https://cogep.notion.site/Utiliza-o-de-Macro-bb3fef3e3df448f1b04dc3f97b1f05f4"
 url_dw_regional = "https://cogep.notion.site/Servidores-por-Regional-e-V-nculo-541acd6fc5094f428f9dc6bcc6ce692f"
-url_pasta_macros = "https://drive.google.com/drive/folders/1oqE-1eeT9a5gnOcJYPFScWg4DACRtxbs?usp=drive_link"
+url_pasta_macros = "https://drive.google.com/drive/folders/1oqE-1eeT9a5gnOcJYPFScWg4DACRtxbs?usp=sharing"
+
+st.set_page_config(page_title="Manuais e Arquivos", page_icon="🧠", layout="wide")
 
 st.markdown("# Manuais e Arquivos 🧠")
 st.write("Aproveite, jovem padawan...")
