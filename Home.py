@@ -1,5 +1,8 @@
 import streamlit as st
 
+st.set_page_config(page_title="ExTrata", page_icon="🔮", layout="wide")
+
+
 co1, co2 = st.columns(2)
 
 with co1:
