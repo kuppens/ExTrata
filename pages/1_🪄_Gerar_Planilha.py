@@ -1,12 +1,12 @@
 import streamlit as st
-import pyautogui
+import webbrowser
 from core import unzip, processa
 import pandas as pd
 import time
 import io
 
 st.set_page_config(page_title="Gerar Planilha", page_icon="🪄", layout="wide")
-
+url = "https://extrata.streamlit.app/Gerar_Planilha"
 # Creating a dictionary of placeholders
 placeholders = {
     "title": st.empty(),
@@ -82,10 +82,8 @@ elif len(files) == 2 and (type_val):
                 st.session_state["uploaded_files"] = False
                 files = 0
 
-            another = st.button(label="Gerar Outra Planilha")
-
-            if another:
-                pyautogui.hotkey("ctrl","F5")
+            if st.button('Gerar Outra Planilha'):
+                webbrowser.open(url)
                 
     with col3:
         pass

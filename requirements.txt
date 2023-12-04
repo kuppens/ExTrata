@@ -1,4 +1,4 @@
 xlsxwriter
 openpyxl
 pandas
-pyautogui
+webbrowser
