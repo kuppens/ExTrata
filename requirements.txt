@@ -1,3 +1,4 @@
 xlsxwriter
 openpyxl
 pandas
+pyautogui
