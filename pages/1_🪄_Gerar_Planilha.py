@@ -55,7 +55,18 @@ elif len(files) == 2 and (type_val):
     with pd.ExcelWriter(buffer, engine="xlsxwriter") as writer:
         # Write each dataframe to a different worksheet.
         df.to_excel(writer, sheet_name="PRINCIPAL", index=False)
+
+        workbook  = writer.book
+        worksheet = writer.sheets['PRINCIPAL']
+        date_format = workbook.add_format({'num_format': 'dd/mm/yyyy'})
+
+        for col_num, value in enumerate(df.columns.values):
+            if value.startswith('DA-'):
+                # Apply the format to the column. Excel columns start from 0
+                worksheet.set_column(col_num, col_num, None, date_format)
+
         writer.close()
+        
         st.write("Concluído! 🪄")
         download = st.download_button(
             label="Fazer Download da Planilha",
