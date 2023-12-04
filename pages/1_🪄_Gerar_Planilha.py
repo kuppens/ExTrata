@@ -82,8 +82,7 @@ elif len(files) == 2 and (type_val):
                 st.session_state["uploaded_files"] = False
                 files = 0
 
-            if st.button('Gerar Outra Planilha'):
-                webbrowser.open(url)
+            st.link_button('Gerar Outra Planilha', url)
                 
     with col3:
         pass
