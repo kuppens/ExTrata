@@ -54,12 +54,13 @@ elif len(files) == 2 and (type_val):
     df = processa(ref, txt)
     with pd.ExcelWriter(buffer, engine="xlsxwriter") as writer:
         # Converte colunas DA- para formato de data
-        for col in df.columns:
-            if col.startswith('DA-'):
-                df[col] = pd.to_datetime(df[col], errors='coerce')
 
         # Escreve para arquivo Excel
         df.to_excel(writer, sheet_name="PRINCIPAL", index=False)
+
+        for col in df.columns:
+            if col.startswith('DA-'):
+                df[col] = pd.to_datetime(df[col], errors='coerce')
 
         workbook  = writer.book
         worksheet = writer.sheets['PRINCIPAL']
